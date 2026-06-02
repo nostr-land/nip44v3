@@ -16,7 +16,7 @@ Compared to NIP-44 v2, it provides:
 - Specification: [nip44v3.md](./nip44v3.md)
 - Implementation guide: [implementing.md](./implementing.md).
 - Test vectors: [test-vectors.json](./test-vectors.json)
-- NIP-07/46 signer extensions: [extensions.md](./extensions.md)
+- Extensions: [./extensions](./extensions/README.md)
 
 ## Implementations
 
