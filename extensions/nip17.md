@@ -33,4 +33,4 @@ If there is no encryption tag, it should be assumed to be `nip44_v2` only.
 
 The following kind and scope should be used for encryption and decryption:
 - Gift Wraps (`1059`): Kind `1059`, and an empty scope (`""`).
-- Seals (`13`): Kind `13`, and an empty scope (`""`).
+- Seals (`13`): Kind `13`, and an empty scope (`""`).

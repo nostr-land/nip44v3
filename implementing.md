@@ -140,7 +140,7 @@ Each entry in the `long_encrypt_decrypt` array contains the following fields:
 - `kind`: The kind to use in the context.
 - `scope_hex`: The scope to use in the context, as hex.
 - `pattern_hex`: The pattern bytes, as hex.
-- `repeat`: The number of times to repeat the pattern.
+- `repeat`: The number of times to repeat the pattern.
 - `ciphertext_sha256`: The ciphertext's SHA256 hash.
 
 The plaintext to use is the `pattern` bytes repeated `repeat` times.

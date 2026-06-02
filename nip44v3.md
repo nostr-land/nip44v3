@@ -94,7 +94,7 @@ Encryption is performed with the following steps:
 7. Compute the MAC for the authenticated data
     - `mac = HMAC(key = mac_key, data = authenticated_data)`
 8. Encode the final ciphertext
-    - `ciphertext = base64_encode(0x03 || nonce || mac || u32_to_bytes(kind) || u32_to_bytes(length(scope)) || scope || chacha20_ciphertext)`
+    - `ciphertext = base64_encode(0x03 || nonce || mac || u32_to_bytes(kind) || u32_to_bytes(length(scope)) || scope || chacha20_ciphertext)`
 
 ## Decryption
 

@@ -26,7 +26,7 @@ Compared to NIP-44 v2, it provides:
 |------|----------|------|
 | [Amber](https://github.com/greenart7c3/Amber) | Android | Remote, Android Intents |
 
-### Libraries
+### Libraries
 
 | Name | Language | License |
 |------|----------|---------|
