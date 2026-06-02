@@ -78,7 +78,9 @@ The ciphertext is encrypted with ChaCha20 using the derived `encryption_key`, an
 [0x00 padding]
 ```
 
-The padding should be checked to be all-zeroes. Otherwise, there is no constraint on how padding is decided, but implementations **should** use the one provided in `spec.md` to prevent fingerprinting.
+The padding should be checked to be all-zeroes. Implementations **must not** do any other checks on the padding length.
+
+There is no constraint on how the padded length is decided, but implementations **should** use the algorithm in `spec.md` to prevent fingerprinting.
 
 There is no limit on the plaintext length. However, it is recommended to avoid long plaintexts, as they are harder to transmit through relays, and must be decrypted fully in RAM.
 
@@ -106,6 +108,27 @@ From both the perspective of secret1 and secret2, test the following:
 - Check that key derivation produces the correct `encryption_key`, `mac_key` and `prk`
 - Decrypt the `ciphertext` and ensure it matches `plaintext_hex`
 - Encrypt the `plaintext_hex` with the given `nonce` and context, and ensure it matches `ciphertext`.
+
+### Decrypt Only
+
+This section includes some ciphertexts that are intentionally non-standard, but are otherwise allowed by the specification. Implementations should be able to successfully decrypt these.
+
+Each item in `decrypt_only` has a similar format to Encrpyt/Decrypt, with the following fields:
+- `secret1` / `secret2`: The private key of both parties, as hex.
+- `nonce`: The 32-byte nonce, as hex.
+- `kind`: The kind to use in the context.
+- `scope_hex`: The scope to use in the context, as hex.
+- `plaintext_hex`: The plaintext, as hex.
+- `ciphertext`: The ciphertext.
+- `encryption_key`: The derived encryption key as hex.
+- `mac_key`: The derived MAC key as hex.
+- `prk`: The HKDF PRK as hex.
+- `note`: A note for this specific test case.
+
+From both the perspective of secret1 and secret2, test the following:
+- Check that your parser have parsed the correct `nonce`, `kind` and `scope`
+- Check that key derivation produces the correct `encryption_key`, `mac_key` and `prk`
+- Decrypt the `ciphertext` and ensure it matches `plaintext_hex`
 
 ### Long Encrypt/Decrypt
 
