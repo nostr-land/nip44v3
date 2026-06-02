@@ -20,6 +20,14 @@ Compared to NIP-44 v2, it provides:
 
 ## Implementations
 
+### Signers
+
+| Name | Platform | Type |
+|------|----------|------|
+| [Amber](https://github.com/greenart7c3/Amber) | Android | Remote, Android Intents |
+
+### Libraries
+
 | Name | Language | License |
 |------|----------|---------|
 | [ncrypt](https://github.com/nostr-land/ncrypt-go) | Go | BSD-3 |
